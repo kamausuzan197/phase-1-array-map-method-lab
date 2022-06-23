@@ -12,11 +12,18 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
-  const tutorialsIntoWords = tutorials.map(string => string.split(' '));
-  const capitalizedWords = [];
-  for (const element of tutorialsIntoWords) {
-    capitalizedWords.push(element.map (word => word[0].toUpperCase() + word.substring(1)).join(" "));
-  }
-  return capitalizedWords;
-}
+  const newTutorials = [];
+ 
+  tutorials.map(item => {
+   const arr = item.split(" ");
+   for(let i = 0; i < arr.length; i++){
+       arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1)
+   }
+
+   const arr2 = arr.join(" ");
+   newTutorials.push(arr2)
+  })
+  return newTutorials;
+ }
+ console.log(titleCased()) 
+
